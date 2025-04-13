@@ -20,7 +20,7 @@ const ForgotPassword = () => {
 
     try {
 
-      const response = await axios.post('https://student-backend-inky.vercel.app/api/auth/verify-email', { email });
+      const response = await axios.post('https://backend-sms-nine.vercel.app/api/auth/verify-email', { email });
       
       if (response.data.status === "success") {
         setStep(2);
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      const response = await axios.post('https://student-backend-inky.vercel.app/api/auth/reset-password', {
+      const response = await axios.post('https://backend-sms-nine.vercel.app/api/auth/reset-password', {
         email,
         newPassword
       });

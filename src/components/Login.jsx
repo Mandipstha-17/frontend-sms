@@ -44,7 +44,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "https://student-backend-inky.vercel.app/api/auth/login",
+        "https://backend-sms-nine.vercel.app/api/auth/login",
         { email, password },
         {
           headers: { "Content-Type": "application/json" },
