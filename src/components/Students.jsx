@@ -20,7 +20,7 @@ const Students = () => {
     const fetchStudents = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get('http://localhost:3000/api/students');
+        const res = await axios.get('https://student-backend-inky.vercel.app/api/students');
         setStudents(res.data);
       } catch (err) {
         setError(err.message);
@@ -73,7 +73,7 @@ const Students = () => {
     if (!studentToDelete) return;
     try {
       setIsLoading(true);
-      await axios.delete(`http://localhost:3000/api/students/${studentToDelete._id}`);
+      await axios.delete(`https://student-backend-inky.vercel.app/api/students/${studentToDelete._id}`);
       setStudents(students.filter(student => student._id !== studentToDelete._id));
       setShowDeleteConfirm(false);
       setStudentToDelete(null);
@@ -143,11 +143,11 @@ const Students = () => {
     setIsLoading(true);
     try {
       if (modalMode === 'add') {
-        const res = await axios.post('http://localhost:3000/api/students', currentStudent);
+        const res = await axios.post('https://student-backend-inky.vercel.app/api/students', currentStudent);
         setStudents([...students, res.data]);
       } else if (modalMode === 'edit') {
         const res = await axios.put(
-          `http://localhost:3000/api/students/${currentStudent._id}`,
+          `https://student-backend-inky.vercel.app/api/students/${currentStudent._id}`,
           currentStudent
         );
         setStudents(students.map(student =>

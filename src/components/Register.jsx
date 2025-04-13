@@ -54,7 +54,7 @@ const Register = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:3000/api/auth/register', {
+      const response = await axios.post('https://student-backend-inky.vercel.app/api/auth/register', {
         name: formData.name,
         email: formData.email,
         password: formData.password,
