@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../style/register.css';
@@ -16,6 +16,7 @@ const Register = () => {
   const [modalMessage, setModalMessage] = useState('');
   const [modalType, setModalType] = useState('');
   const navigate = useNavigate();
+  const timeoutRef = useRef(null);
 
   const validateForm = () => {
     const newErrors = {};
@@ -50,7 +51,7 @@ const Register = () => {
     e.preventDefault();
     
     if (!validateForm()) return;
-    if (loading) return; 
+    if (loading) return;
 
     try {
       setLoading(true);
@@ -65,7 +66,10 @@ const Register = () => {
         setModalMessage('Registration successful! Redirecting to login...');
         setModalType('success');
         setShowModal(true);
-        setTimeout(() => {
+
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+          setShowModal(false);
           navigate('/login');
         }, 2000);
       } else {
@@ -82,10 +86,15 @@ const Register = () => {
           errorMessage = err.response.data.message;
         }
       }
-      
+
       setModalMessage(errorMessage);
       setModalType('error');
       setShowModal(true);
+
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setShowModal(false);
+      }, 5000);
     } finally {
       setLoading(false);
     }
