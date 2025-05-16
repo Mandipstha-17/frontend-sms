@@ -13,11 +13,11 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path='/register'element={<Register />}/>
-        <Route path='/forgot-password'element={<ForgotPassword />}/>
-     
+         <Route path="/" element={<Navigate to="/admin-summary" />} />
+      {/* //   <Route path="/login" element={<Login />} />
+      //   <Route path='/register'element={<Register />}/>
+      //   <Route path='/forgot-password'element={<ForgotPassword />}/>
+      // */} 
 
         <Route path="/admin-summary"
           element={
