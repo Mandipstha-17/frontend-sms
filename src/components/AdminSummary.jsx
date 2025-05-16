@@ -69,11 +69,6 @@ const AdminSummary = () => {
             <FaBook /> Courses
           </li>
         
-          <li>
-            <button className="logout-btn" onClick={handleLogout}>
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
         </ul>
       </aside>
 
