@@ -1,12 +1,68 @@
-# React + Vite
+# Student Management System – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend of a full-stack Student Management System built using React, Vite, and standard CSS. This app provides a clean and user-friendly interface to manage students, supporting full CRUD operations integrated with a RESTful backend API.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ https://student-frontend-kappa.vercel.app/admin-summary
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    frontend-sms/
+    ├── public/
+    │   └── index.html
+    ├── src/
+    │   ├── components/
+    │   │   ├── Layout.jsx
+    │   │   ├── ConfirmDialog.jsx
+    │   │   ├── SearchBar.jsx
+    │   │   ├── StudentForm.jsx
+    │   │   ├── StudentTable.jsx
+    │   │   └── StudentView.jsx
+    │   ├── context/
+    │   │   └── StudentContext.jsx
+    │   ├── App.jsx
+    │   ├── main.jsx
+    │   └── index.css
+    ├── package.json
+    ├── vite.config.js
+    ├── .gitignore
+    └── README.md
+
+## 🚀 Features
+
+    ✔️ View all student records in a sortable table
+    ✔️ Add new students via modal form
+    ✔️ Edit existing student details
+    ✔️ Delete students with confirmation dialog
+    ✔️ Filter/search students by name or course
+    ✔️ Clean UI with standard CSS (no libraries)
+    ✔️ Integrated with RESTful backend API
+    ✔️ Responsive design for desktop and mobile
+
+## 🧰 Technologies Used
+
+    ⚛️ React
+    ⚡ Vite
+    🎨 Standard CSS
+    📝 JavaScript (ES6+)
+    🌐 HTML5
+
+## 📥 Getting Started
+
+    1. Clone the repository:
+       git clone https://github.com/Mandipstha-17/frontend-sms.git
+
+    2. Navigate to the project directory:
+       cd frontend-sms
+
+    3. Install dependencies:
+       npm install
+
+    4. Start the development server:
+       npm run dev
+
+    5. Open your browser at:
+       http://localhost:5173
+
+
